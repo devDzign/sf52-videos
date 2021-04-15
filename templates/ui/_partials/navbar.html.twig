@@ -1,0 +1,40 @@
+
+
+{% set currentPath = app.request.attributes.get('_route')%}
+{#{{ dump(currentPath) }}#}
+<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top" id="nav">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="{{ path('index', {  }) }}">Navbar</a>
+        <button
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarNav"
+                aria-controls="navbarNav"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+        >
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link {% if currentPath == 'index' %} active {% endif %}"
+                       aria-current="page"
+                       href="{{ path('index', {  }) }}">
+                        Home
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link {% if currentPath == 'health' %} active {% endif %}" href="{{ path('health', {  }) }}">Health</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link {% if currentPath == 'stimulus' %} active {% endif %}" href="{{ path('stimulus', {  }) }}">Stimulus</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link {% if currentPath == 'chartjs' %} active {% endif %}" href="{{ path('chartjs', {  }) }}">dashboard</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>

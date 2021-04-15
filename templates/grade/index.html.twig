@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Grade index{% endblock %}
+
+{% block body %}
+    <div class="container min-height">
+        <div class="row">
+             <h1>Table of Grades</h1>
+            <div class="col-12 d-flex justify-content-center align-items-center mt-5">
+                <table class="table table-striped">
+                    <thead>
+                    <tr class="">
+                        <th>Name</th>
+                        <th>actions</th>
+                    </tr>
+                    </thead>
+                    <tbody class="tbody">
+                    {% for grade in grades %}
+                        <tr class="item">
+                            <td>{{ grade.name }}</td>
+                            <td>
+                                <a href="{{ path('grade_show', {'id': grade.id}) }}" class="btn btn btn-outline-primary"><i class="fas fa-eye"></i> show</a>
+                                <a href="{{ path('grade_edit', {'id': grade.id}) }}" class="btn btn-outline-success"><i class="fa fa-edit"></i> edit</a>
+                            </td>
+                        </tr>
+                    {% else %}
+                        <tr>
+                            <td colspan="3">no records found</td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+                <a href="{{ path('grade_new') }}" class="btn btn-outline-dark"> <i class="fa fa-plus"></i> Create new</a>
+            </div>
+        </div>
+    </div>
+    <h1>Grade index</h1>
+
+
+{% endblock %}

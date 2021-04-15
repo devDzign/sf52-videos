@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello Stimulus!{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <div class="row">
+
+            <div class="col-6 d-flex justify-content-center align-items-center min-height">
+                <div class="card shadow shadow-lg content">
+                    <div class="card-header bg-info text-center text-uppercase">
+                        React component with Stimulus
+                    </div>
+                    <div class="card-body">
+
+                        <span
+                                {{ stimulus_controller(
+                                    'react-component',
+                                    { "name": "super cool react props"}) }}
+                        >
+
+                        </span>
+
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-6 d-flex justify-content-center align-items-center min-height">
+                <div class="card shadow shadow-lg content">
+                    <div class="card-header bg-info text-center text-uppercase">
+                        React component with Stimulus
+                    </div>
+                    <div class="card-body">
+
+                        <span
+                                {{ stimulus_controller(
+                                    'counter',
+                                    { "count": "5"}) }}
+                        >
+
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+{% endblock %}

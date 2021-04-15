@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="container">
+        <div class="row">
+
+            <div class="col-6 d-flex justify-content-center align-items-center min-height">
+                <div class="card shadow shadow-lg w-100">
+                    <div class="card-header bg-info text-center text-uppercase">
+                        Line Chart
+                    </div>
+                    <div class="card-body">
+                        {{ render_chart(
+                            chart,
+                            {
+                                'data-controller': 'admin-chartjs',
+                                'data-action': 'chartjs:connect->admin-chartjs#onChartConnect'
+                            }
+                        ) }}
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-6 d-flex justify-content-center align-items-center min-height">
+                <div class="card shadow shadow-lg w-100">
+                    <div class="card-header bg-info text-center text-uppercase">
+                        React component with Stimulus
+                    </div>
+                    <div class="card-body">
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+{% endblock %}
